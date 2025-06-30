@@ -1,0 +1,27 @@
+openapi: 3.1.0
+info:
+  title: Sommelier API
+  version: 1.0.0
+servers:
+  - url: https://sommelier2.onrender.com
+paths:
+  /add-wine:
+    post:
+      operationId: addWine
+      summary: Voeg een wijn toe aan Airtable
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                domain:
+                  type: string
+                name:
+                  type: string
+              required:
+                - domain
+      responses:
+        "200":
+          description: Wijn toegevoegd
