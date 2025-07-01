@@ -48,3 +48,54 @@ paths:
       responses:
         "200":
           description: Wijn toegevoegd
+  /list-wines:
+  get:
+    operationId: listWines
+    summary: Haal beschikbare wijnen op, optioneel gefilterd op type
+    parameters:
+      - in: query
+        name: type
+        schema:
+          type: string
+          enum: [Red, White, Rosé]
+        description: Het soort wijn (Red, White, Rosé)
+    responses:
+      "200":
+        description: Lijst van wijnen
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                records:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      domain:
+                        type: string
+                      name:
+                        type: string
+                      year:
+                        type: integer
+                      type:
+                        type: string
+                      average_rating:
+                        type: number
+                      domain_price:
+                        type: number
+                      retail_price:
+                        type: number
+                      drink_period_start:
+                        type: integer
+                      drink_period_end:
+                        type: integer
+                      description:
+                        type: string
+                      recommendations:
+                        type: string
+                      status:
+                        type: string
+
