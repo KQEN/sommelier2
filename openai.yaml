@@ -20,8 +20,31 @@ paths:
                   type: string
                 name:
                   type: string
+                year:
+                  type: integer
+                type:
+                  type: string
+                average_rating:
+                  type: number
+                domain_price:
+                  type: number
+                retail_price:
+                  type: number
+                drink_period_start:
+                  type: integer
+                drink_period_end:
+                  type: integer
+                description:
+                  type: string
+                recommendations:
+                  type: string
+                status:
+                  type: string
               required:
                 - domain
+                - name
+                - year
+                - status
       responses:
         "200":
           description: Wijn toegevoegd
