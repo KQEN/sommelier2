@@ -53,12 +53,17 @@ paths:
     operationId: listWines
     summary: Haal beschikbare wijnen op, optioneel gefilterd op type
     parameters:
-      - in: query
-        name: type
-        schema:
-          type: string
-          enum: [Red, White, Rosé]
-        description: Het soort wijn (Red, White, Rosé)
+        - in: query
+          name: type
+          schema:
+            type: string
+            enum: [Red, White, Rosé]
+          description: Het soort wijn (Red, White, Rosé)
+        - in: query
+          name: is_prime
+          schema:
+            type: boolean
+          description: Filter op wijnen die nu op dronk zijn (TRUE betekent filteren)
     responses:
       "200":
         description: Lijst van wijnen
